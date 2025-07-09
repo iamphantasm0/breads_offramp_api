@@ -1,0 +1,191 @@
+2025-07-09 13:28:39,543 - offramp_logger - ERROR - Network request to https://api.bread.africa/v1/swap/get-quote failed.
+Traceback (most recent call last):
+  File "C:\dev\universal_offramp_api\.venv\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\dev\universal_offramp_api\.venv\Lib\site-packages\httpx\_transports\default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\universal_offramp_api\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "C:\dev\universal_offramp_api\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        pool_request.request
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\dev\universal_offramp_api\.venv\Lib\site-packages\httpcore\_async\connection.py", line 103, in handle_async_request
+    return await self._connection.handle_async_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\universal_offramp_api\.venv\Lib\site-packages\httpcore\_async\http11.py", line 136, in handle_async_request
+    raise exc
+  File "C:\dev\universal_offramp_api\.venv\Lib\site-packages\httpcore\_async\http11.py", line 106, in handle_async_request
+    ) = await self._receive_response_headers(**kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\universal_offramp_api\.venv\Lib\site-packages\httpcore\_async\http11.py", line 177, in _receive_response_headers
+    event = await self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\universal_offramp_api\.venv\Lib\site-packages\httpcore\_async\http11.py", line 217, in _receive_event
+    data = await self._network_stream.read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.READ_NUM_BYTES, timeout=timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\dev\universal_offramp_api\.venv\Lib\site-packages\httpcore\_backends\anyio.py", line 32, in read
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\chibuzor.adigwe\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\dev\universal_offramp_api\.venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\dev\universal_offramp_api\app\services\offramp_client.py", line 20, in _request
+    response = await self._client.request(method, endpoint, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\universal_offramp_api\.venv\Lib\site-packages\httpx\_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\universal_offramp_api\.venv\Lib\site-packages\httpx\_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\dev\universal_offramp_api\.venv\Lib\site-packages\httpx\_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\dev\universal_offramp_api\.venv\Lib\site-packages\httpx\_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\universal_offramp_api\.venv\Lib\site-packages\httpx\_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\universal_offramp_api\.venv\Lib\site-packages\httpx\_transports\default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\chibuzor.adigwe\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\dev\universal_offramp_api\.venv\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadTimeout
+2025-07-09 13:36:31,656 - offramp_logger - INFO - Starting Universal Offramp service...
+2025-07-09 13:46:51,718 - offramp_logger - ERROR - Network request to https://api.bread.africa/v1/swap/create-transfer failed.
+Traceback (most recent call last):
+  File "C:\dev\universal_offramp_api\.venv\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\dev\universal_offramp_api\.venv\Lib\site-packages\httpx\_transports\default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\universal_offramp_api\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "C:\dev\universal_offramp_api\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        pool_request.request
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\dev\universal_offramp_api\.venv\Lib\site-packages\httpcore\_async\connection.py", line 103, in handle_async_request
+    return await self._connection.handle_async_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\universal_offramp_api\.venv\Lib\site-packages\httpcore\_async\http11.py", line 136, in handle_async_request
+    raise exc
+  File "C:\dev\universal_offramp_api\.venv\Lib\site-packages\httpcore\_async\http11.py", line 106, in handle_async_request
+    ) = await self._receive_response_headers(**kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\universal_offramp_api\.venv\Lib\site-packages\httpcore\_async\http11.py", line 177, in _receive_response_headers
+    event = await self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\universal_offramp_api\.venv\Lib\site-packages\httpcore\_async\http11.py", line 217, in _receive_event
+    data = await self._network_stream.read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.READ_NUM_BYTES, timeout=timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\dev\universal_offramp_api\.venv\Lib\site-packages\httpcore\_backends\anyio.py", line 32, in read
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\chibuzor.adigwe\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\dev\universal_offramp_api\.venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\dev\universal_offramp_api\app\services\offramp_client.py", line 29, in _request
+    response = await self._client.request(method, endpoint, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\universal_offramp_api\.venv\Lib\site-packages\httpx\_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\universal_offramp_api\.venv\Lib\site-packages\httpx\_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\dev\universal_offramp_api\.venv\Lib\site-packages\httpx\_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\dev\universal_offramp_api\.venv\Lib\site-packages\httpx\_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\universal_offramp_api\.venv\Lib\site-packages\httpx\_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\universal_offramp_api\.venv\Lib\site-packages\httpx\_transports\default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\chibuzor.adigwe\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\dev\universal_offramp_api\.venv\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadTimeout
+2025-07-09 13:57:18,684 - offramp_logger - INFO - Shutting down Universal Offramp service...
+2025-07-09 13:57:20,408 - offramp_logger - INFO - Starting Universal Offramp service...
+2025-07-09 14:11:16,355 - offramp_logger - ERROR - API returned an error: 400 - {"status":400,"message":"Failed to find steps","data":null}
+2025-07-09 14:12:01,765 - offramp_logger - ERROR - API returned an error: 400 - {"status":400,"message":"Failed to find steps","data":null}
+2025-07-09 14:12:25,571 - offramp_logger - ERROR - API returned an error: 400 - {"status":400,"message":"Failed to find steps","data":null}
+2025-07-09 14:14:07,754 - offramp_logger - INFO - Shutting down Universal Offramp service...
+2025-07-09 14:14:09,218 - offramp_logger - INFO - Starting Universal Offramp service...
+2025-07-09 14:15:13,151 - offramp_logger - INFO - Shutting down Universal Offramp service...
+2025-07-09 14:15:14,395 - offramp_logger - INFO - Starting Universal Offramp service...
+2025-07-09 14:28:59,277 - offramp_logger - INFO - Shutting down Universal Offramp service...
+2025-07-09 14:29:00,643 - offramp_logger - INFO - Starting Universal Offramp service...
+2025-07-09 14:29:11,694 - offramp_logger - INFO - Shutting down Universal Offramp service...
+2025-07-09 14:29:12,825 - offramp_logger - INFO - Starting Universal Offramp service...
+2025-07-09 14:31:37,147 - offramp_logger - INFO - Shutting down Universal Offramp service...
+2025-07-09 14:31:38,485 - offramp_logger - INFO - Starting Universal Offramp service...
+2025-07-09 14:39:17,003 - offramp_logger - INFO - Shutting down Universal Offramp service...
+2025-07-09 14:39:18,292 - offramp_logger - INFO - Starting Universal Offramp service...
+2025-07-09 14:40:50,501 - offramp_logger - INFO - Shutting down Universal Offramp service...
+2025-07-09 14:40:51,917 - offramp_logger - INFO - Starting Universal Offramp service...
+2025-07-09 14:40:59,340 - offramp_logger - INFO - Shutting down Universal Offramp service...
+2025-07-09 14:41:00,577 - offramp_logger - INFO - Starting Universal Offramp service...
+2025-07-09 14:41:06,492 - offramp_logger - INFO - Shutting down Universal Offramp service...
+2025-07-09 14:41:07,717 - offramp_logger - INFO - Starting Universal Offramp service...
+2025-07-09 14:41:13,618 - offramp_logger - INFO - Shutting down Universal Offramp service...
+2025-07-09 14:41:14,703 - offramp_logger - INFO - Starting Universal Offramp service...
+2025-07-09 14:43:00,724 - offramp_logger - INFO - Shutting down Universal Offramp service...
+2025-07-09 14:43:01,971 - offramp_logger - INFO - Starting Universal Offramp service...
+2025-07-09 17:47:21,686 - offramp_logger - INFO - Starting Universal Offramp service...
+2025-07-09 18:58:10,182 - offramp_logger - INFO - Shutting down Universal Offramp service...
+2025-07-09 18:58:34,421 - offramp_logger - INFO - Starting Universal Offramp service...
