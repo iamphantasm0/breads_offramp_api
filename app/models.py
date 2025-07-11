@@ -35,6 +35,9 @@ class TransferRequestPayload(BaseModel):
     amount: float = Field(..., example=10)
     offramp: OfframpTransferRequest
 
+class History(BaseModel):
+    address: str = Field(..., examples="0xB6F779f943D6986e5E783aA800Fb78d401965401")
+
 # =================================================================
 #                         RESPONSE MODEL
 # =================================================================

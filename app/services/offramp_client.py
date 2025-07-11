@@ -1,14 +1,12 @@
 import httpx
 from fastapi import HTTPException
+from watchfiles import awatch
+
 from app.config import settings
-from app.models import QuoteRequestPayload, TransferRequestPayload, LookupPayload
+from app.models import QuoteRequestPayload, TransferRequestPayload, LookupPayload, History
 from app.logger import logger
 
 class OfframpClient:
-    """
-    A client to interact with the Bread.africa Offramp API.
-    Manages an httpx.AsyncClient for efficient HTTP requests.
-    """
     def __init__(self, base_url: str):
         # Define a longer timeout (30 seconds for read, 60 for connect)
         timeout = httpx.Timeout(30.0, connect=60.0)
@@ -38,6 +36,9 @@ class OfframpClient:
 
     async def fetch_quote(self, payload: QuoteRequestPayload):
         return await self._request("POST", "/get-quote", json=payload.model_dump())
+
+    async def fetch_history(self, address: str):
+        return await self._request("GET", "/get-transfers", params={"address": address})
 
     async def execute_transfer(self, payload: TransferRequestPayload):
         return await self._request("POST", "/create-transfer", json=payload.model_dump())

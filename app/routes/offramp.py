@@ -29,6 +29,13 @@ async def get_transfer_status(
     """Get the status of a specific transfer using its reference ID."""
     return await request.app.state.offramp_client.fetch_status(reference)
 
+@router.get("/get-transfers", response_model=ApiResponse, tags=["Universal Offramp"])
+async  def get_history(
+        request: Request,
+        address: str = Query(..., example="0xB6F779f943D6986e5E783aA800Fb78d401965401")
+):
+    return await request.app.state.offramp_client.fetch_history(address)
+
 @router.get("/tokens", response_model=ApiResponse, tags=["Supported Assets"])
 async def get_supported_tokens(
     request: Request,
